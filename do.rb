@@ -153,8 +153,14 @@ def set_up_configs
     eof
 
     puts "Xcode"
-    FileUtils.cp Utility.working_path + "Data/configs/Xcode/com.apple.dt.Xcode.plist", "#{Dir.home}/Library/Preferences/com.apple.dt.Xcode.plist"
-    FileUtils.cp_r Utility.working_path + "Data/configs/Xcode/UserData", "#{Dir.home}/Library/Developer/Xcode/UserData"
+    path = "#{Dir.home}/Library/Preferences"
+    path = Pathname.new path
+    path.mkpath unless path.exist?
+    FileUtils.cp Utility.working_path + "Data/configs/Xcode/com.apple.dt.Xcode.plist", path.to_s
+    path = "#{Dir.home}/Library/Developer/Xcode"
+    path = Pathname.new path
+    path.mkpath unless path.exist?
+    FileUtils.cp_r Utility.working_path + "Data/configs/Xcode/UserData", path.to_s
 end
 set_up_configs
 
