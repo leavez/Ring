@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Quiet Light",
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "smooth",
+    "workbench.iconTheme": "easy-icons",
+    "editor.fontSize": 14,
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 0,
+    "files.autoSave": "onFocusChange"
+}

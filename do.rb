@@ -122,6 +122,31 @@ def set_up_configs
     puts "karabiner config"
     FileUtils.cp_r Utility.working_path + "Data/configs/karabiner", "#{Dir.home}/.config/"
 
+    path = "#{Dir.home}/Library/Application\ Support/Code/User"
+    path = Pathname.new path
+    path.mkpath unless path.exist?
+    FileUtils.cp_r Utility.working_path + "Data/configs/Code/User", path.to_s
+    
+    system <<-eof
+    cat << EOF >> ~/.zshrc
+    # Add Visual Studio Code (code)
+    export PATH="\$PATH:#{Utility.working_path}/Done/Visual Studio Code.app/Contents/Resources/app/bin"
+    EOF
+    eof
+    
+    system <<-eof
+    export PATH="\$PATH:#{Utility.working_path}/Done/Visual Studio Code.app/Contents/Resources/app/bin"
+    code --install-extension Kasik96.swift
+    code --install-extension Orta.vscode-ios-common-files
+    code --install-extension alireza94.theme-gotham
+    code --install-extension castwide.solargraph
+    code --install-extension dbankier.vscode-instant-markdown
+    code --install-extension formulahendry.code-runner
+    code --install-extension jamesmaj.easy-icons
+    code --install-extension ms-python.python
+    code --install-extension ornithologist.ios-snippets
+    code --install-extension rebornix.Ruby
+    eof
 end
 set_up_configs
 
