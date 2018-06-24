@@ -122,6 +122,7 @@ def set_up_configs
     puts "karabiner config"
     FileUtils.cp_r Utility.working_path + "Data/configs/karabiner", "#{Dir.home}/.config/"
 
+    puts "vs code"
     path = "#{Dir.home}/Library/Application\ Support/Code/User"
     path = Pathname.new path
     path.mkpath unless path.exist?
