@@ -5,6 +5,9 @@ class Utility
     def self.printBlue(text)
         puts "\033[34m#{text}\033[0m"
     end
+    def self.printGreen(text)
+        puts "\033[32m#{text}\033[0m"
+    end
     def self.printSection(title)
         len = 70
         Utility.printBlue "#" * len
@@ -154,6 +157,8 @@ def set_up_configs
     FileUtils.cp_r Utility.working_path + "Data/configs/Xcode/UserData", "#{Dir.home}/Library/Developer/Xcode/UserData"
 end
 set_up_configs
+
+Utility.printGreen "DONE!!"
 
 
 
