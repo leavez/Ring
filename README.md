@@ -3,6 +3,10 @@
 
 Script to set up my favourite environment in a new mac.
 
+```shell
+sh -c "$(curl -fsSL https://raw.github.com/leavez/Ring/master/install.sh)"
+```
+
 ### Levels
 
 * level 1: basic editing
