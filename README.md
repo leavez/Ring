@@ -26,9 +26,10 @@ Script to set up my favourite environment in a new mac.
     - oh-my-zsh & zshrc
     - VSCode config
     - VSCode ruby & python environment
-    - *chrome account
-    - *xcode color theme
+    - xcode config
+    - xcode color theme
     - *brew
+    - *chrome account
     - *cocoapods and cocopods_pulgin
 
 - Shortcut

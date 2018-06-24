@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>fillview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>private func fill(view:UIView , withView: UIView)
+    -&gt; (top:NSLayoutConstraint, left:NSLayoutConstraint ,bottom:NSLayoutConstraint, right:NSLayoutConstraint)
+{
+    view.addSubview(withView)
+    withView.translatesAutoresizingMaskIntoConstraints = false
+
+    let constriants = [NSLayoutAttribute.top, .left, .bottom, .right].map { c in
+        NSLayoutConstraint(item: withView, attribute: c, relatedBy: .equal, toItem: view, attribute: c, multiplier: 1, constant: 0)
+    }
+
+    view.addConstraints(constriants)
+    return (constriants[0],constriants[1],constriants[2],constriants[3])
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7F39CBEB-9CAB-4C4A-B16C-BCCAF11AB1C8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>fill view with view</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

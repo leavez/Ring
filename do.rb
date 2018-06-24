@@ -148,6 +148,10 @@ def set_up_configs
     code --install-extension ornithologist.ios-snippets
     code --install-extension rebornix.Ruby
     eof
+
+    puts "Xcode"
+    FileUtils.cp Utility.working_path + "Data/configs/Xcode/com.apple.dt.Xcode.plist", "#{Dir.home}/Library/Preferences/com.apple.dt.Xcode.plist"
+    FileUtils.cp_r Utility.working_path + "Data/configs/Xcode/UserData", "#{Dir.home}/Library/Developer/Xcode/UserData"
 end
 set_up_configs
 
